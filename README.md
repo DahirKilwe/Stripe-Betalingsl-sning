@@ -61,16 +61,6 @@ node server.js
 http://localhost:3000
 💳 Testkort
 
-Bruk dette:
-
-Kortnummer: 4242 4242 4242 4242
-Dato: 12/34
-CVC: 123
-⚠️ Sikkerhet
-Ikke last opp .env til GitHub
-Ikke del secret key (sk_test)
-Kun bruk pk_test i frontend
-📌 Om prosjektet
 
 Dette prosjektet viser hvordan man integrerer Stripe betaling i en webapplikasjon.
 
