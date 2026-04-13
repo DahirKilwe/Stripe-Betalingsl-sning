@@ -1,16 +1,13 @@
 💳 Stripe Betalingsløsning (Node.js + JavaScript)
 
-Dette prosjektet er en enkel og moderne betalingsløsning laget med Stripe Payment Element, Node.js og JavaScript.
-
-Brukeren kan skrive inn ønsket beløp og gjennomføre betaling direkte på siden.
+Dette prosjektet er en enkel betalingsløsning med Stripe der brukeren kan skrive inn beløp og betale direkte på siden.
 
 🚀 Funksjoner
-💰 Velg eget beløp (dynamisk betaling)
-💳 Betal med kort (Stripe test)
-🔒 Sikker håndtering via Stripe
-⚡ Interaktiv betalingsside (ikke redirect)
+💰 Velg eget beløp
+💳 Betal med kort (Stripe)
+🔒 Sikker betaling (Stripe håndterer alt)
+⚡ Interaktiv betaling (ingen redirect)
 🔙 Tilbake-knapp etter betaling
-✅ Success-side etter fullført betaling
 🛠️ Teknologi
 Node.js
 Express
@@ -20,44 +17,65 @@ HTML / CSS / JavaScript
 bettaling/
 │
 ├── server.js
-├── .env
+├── .env        (skal lages selv - ikke i GitHub)
 │
 └── public/
     ├── index.html
     ├── app.js
     ├── success.html
-🔐 Oppsett
+🔐 Viktig om .env
+
+.env er ikke inkludert i prosjektet av sikkerhetsgrunner.
+
+Du må lage den selv.
+
+⚙️ Oppsett
 1. Installer avhengigheter
 npm install
-2. Lag .env fil
-STRIPE_SECRET_KEY=sk_test_your_secret_key
+2. Lag .env fil (VELDIG VIKTIG)
+
+Lag en ny fil i samme mappe som server.js og kall den:
+
+.env
+
+Skriv inn:
+
+STRIPE_SECRET_KEY=sk_test_din_stripe_key
+
+👉 Du finner denne i Stripe Dashboard:
+
+Gå til Stripe
+Developers → API keys
+Kopier Secret key (sk_test_...)
 3. Sett inn public key
 
-I public/app.js:
+Åpne public/app.js og legg inn:
 
-const stripe = Stripe("pk_test_your_public_key");
+const stripe = Stripe("pk_test_din_public_key");
+
+👉 Denne finner du også i Stripe Dashboard.
+
 4. Start server
 node server.js
 5. Åpne i nettleser
 http://localhost:3000
 💳 Testkort
 
-Bruk dette kortet:
+Bruk dette:
 
-4242 4242 4242 4242
-12/34
-123
-⚠️ Viktig
-Ikke del dine Stripe nøkler offentlig
-Bruk test mode under utvikling
-Bytt til live keys for ekte betaling
+Kortnummer: 4242 4242 4242 4242
+Dato: 12/34
+CVC: 123
+⚠️ Sikkerhet
+Ikke last opp .env til GitHub
+Ikke del secret key (sk_test)
+Kun bruk pk_test i frontend
 📌 Om prosjektet
 
-Dette prosjektet er laget som en del av læring innen webutvikling og betalingssystemer.
-Det demonstrerer hvordan man kan integrere Stripe i en enkel webapplikasjon.
+Dette prosjektet viser hvordan man integrerer Stripe betaling i en webapplikasjon.
 
 👤 Forfatter
 
 Dahir Kilwe
 Bachelor i IT og informasjonssystemer
-Oslo, Norge# Stripe-Betalingsl-sning
+Oslo, Norge
